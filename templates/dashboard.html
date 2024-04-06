@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Dashboard - Carpool Connect</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.min.css') }}">
+</head>
+<body>
+<div class="container">
+    <h1>Available Rides</h1>
+    <div>
+        {% for ride in rides %}
+        <div class="ride">
+            <p>Destination: {{ ride.destination }}</p>
+            <p>Departure Time: {{ ride.departure_time }}</p>
+            <p>Seats Available: {{ ride.seats_available }}</p>
+            <p>Offered by: {{ ride.driver.username }}</p>
+        </div>
+        {% endfor %}
+    </div>
+    <hr>
+    <h2>Offer a Ride</h2>
+    <form action="{{ url_for('offer_ride') }}" method="post">
+        {{ form.hidden_tag() }}
+        <div class="form-group">
+            {{ form.destination.label }}
+            {{ form.destination(class="form-control") }}
+        </div>
+        <div class="form-group">
+            {{ form.departure_time.label }}
+            {{ form.departure_time(class="form-control") }}
+        </div>
+        <div class="form-group">
+            {{ form.seats_available.label }}
+            {{ form.seats_available(class="form-control") }}
+        </div>
+        {{ form.submit(class="btn btn-primary") }}
+    </form>
+</div>
+</body>
+</html>
