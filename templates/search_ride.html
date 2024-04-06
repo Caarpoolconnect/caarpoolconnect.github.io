@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search for a Ride - Carpool Connect</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.min.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h2>Search for a Ride</h2>
+        <form action="" method="post">
+            {{ form.hidden_tag() }}
+            <div class="form-group">
+                {{ form.departure.label }}
+                {{ form.departure(class="form-control") }}
+            </div>
+            <div class="form-group">
+                {{ form.destination.label }}
+                {{ form.destination(class="form-control") }}
+            </div>
+            <div class="form-group">
+                {{ form.desired_departure_time.label }}
+                {{ form.desired_departure_time(class="form-control") }}
+            </div>
+            {{ form.submit(class="btn btn-info") }}
+        </form>
+    </div>
+</body>
+</html>

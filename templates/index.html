@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carpool Connect - Home</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.min.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Welcome to Carpool Connect</h1>
+        <p>Find or offer rides within your community.</p>
+        <a href="{{ url_for('register') }}" class="btn btn-primary">Register</a>
+        <a href="{{ url_for('login') }}" class="btn btn-secondary">Login</a>
+        <a href="{{ url_for('offer_ride') }}" class="btn btn-success">Offer a Ride</a>
+        <a href="{{ url_for('search_ride') }}" class="btn btn-info">Search for a Ride</a>
+    </div>
+</body>
+</html>
